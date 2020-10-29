@@ -73,3 +73,59 @@ Buster dog
 Shih-tzu is owned by Christy
 (10 points) 
 """
+pets = []
+names = []
+
+class pet:
+
+    global pets
+    global names
+
+    def __init__(self):
+        self.animal = input("Type of animal:\n").strip()
+        self.breed = input("Breed\n").strip()
+        n = input("Name:\n").strip()
+        self.name = n
+        names.append(n)
+        self.owner = input("Owner:\n").strip()
+        self.birth = input("Birthdate\n").strip()
+
+    def __del__(self):
+        pass
+
+    def display(self):
+        #print( self.name + " " + self.animal + "\n" + self.breed + " is owned by " + self.owner)
+        print(self.name + "\n" + self.animal + "\n" + self.breed + "\n" + self.owner)
+
+def main():
+    global pets
+    global names
+    while True:
+        x = input("1. Enter a new pet\n2. Retrieve a pet\n3. Exit\n").strip()
+        if x == "1":
+            pets.append(pet())
+            #os.system("cls")
+        elif x == "2":
+            if len(pets) == 0:
+                #os.system("cls")
+                print("You have no pets!")
+            else:
+                #os.system("cls")
+                #print(names)
+                p = input("Enter pet's name\n").strip()
+                #os.system("cls")
+                if p in names:
+                    pets[names.index(p)].display()
+                    #break
+                else:
+                    #os.system("cls")
+                    print("You don't have a pet named " + p + "!")
+        elif x == "3":
+            #os.system("cls")
+            #print("Yeah get outta here loser")
+            break
+        else:
+            #os.system("cls")
+            pass
+
+main()
