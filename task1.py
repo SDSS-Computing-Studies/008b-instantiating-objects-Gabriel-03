@@ -116,9 +116,7 @@ def main():
                 #os.system("cls")
                 if p in names:
                     pets[names.index(p)].display()
-                    #break
                 else:
-                    #os.system("cls")
                     print("You don't have a pet named " + p + "!")
         elif x == "3":
             #os.system("cls")
